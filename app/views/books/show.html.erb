@@ -1,0 +1,26 @@
+<body>
+  <!--フラッシュメッセージ-->
+  <% if flash[:notice] %>
+    <div class="alert alert-primary" role="alerf">
+      <%= notice %>
+    </div>
+  <% end %>
+
+  <p>
+    <strong>Title:</strong>
+    <!--dbからtitleを持ってくる-->
+    <%=@book.title %>
+  </p>
+
+  <p>
+    <strong>Body:</strong>
+    <!--dbからbodyを持ってくる-->
+    <%=@book.body %>
+  </p>
+
+  <!--editページへのリンク-->
+  <%= link_to "Edit", edit_book_path(@book.id) %>
+   |
+  <!--indexページへのリンク-->
+  <%= link_to "Back", books_path %>
+</body>
